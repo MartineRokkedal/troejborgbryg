@@ -1,0 +1,543 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+/* Til mobil  */
+/* Styling af navbar */
+    a{
+        color: #3e2e25;
+    }
+
+    .header {
+        background-color: #fffefc;
+        box-shadow: 1px 1px 4px 0 rgba(0,0,0,.1);
+        position: fixed;
+        width: 100%;
+        z-index: 3;
+    }
+
+    .header ul {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+        overflow: hidden;
+        background-color: #fffefc;
+    }
+
+    .header ul a {
+        display: block;
+        padding: 20px;
+        text-decoration: none;
+    }
+
+    .header ul a:hover {
+        background-color: #f7e6cd;
+    }
+
+    .header .logo {
+        float: left;
+        display: block;
+        width: 15rem;
+    }
+
+    .header .menu {
+        clear: both;
+        max-height: 0;
+        transition: max-height .2s ease-out;
+    }
+
+    .header .menu-icon {
+        padding: 28px 20px;
+        position: relative;
+        float: right;
+        cursor: pointer;
+    }
+
+    .header .menu-icon .nav-icon {
+        background: #333;
+        display: block;
+        height: 2px;
+        width: 18px;
+        position: relative;
+        transition: background .2s ease-out;
+    }
+
+    .header .menu-icon .nav-icon:before {
+        background-color: #333;
+        content: "";
+        display: block;
+        height: 100%;
+        width: 100%;
+        position: absolute;
+        transition: all .2s ease-out;
+        top: 5px;
+    } 
+
+    .header .menu-icon .nav-icon:after {
+        background-color: #333;
+        content: "";
+        display: block;
+        height: 100%;
+        width: 100%;
+        position: absolute;
+        transition: all .2s ease-out;
+        top: -5px;
+    } 
+
+    .header .menu-btn {
+        display: none;
+    }
+
+    .header .menu-btn:checked ~ .menu {
+        max-height: 500px;
+    }
+
+    .header .menu-btn:checked ~ .menu-icon .nav-icon {
+       background:transparent;
+    }
+
+    .header .menu-btn:checked ~ .menu-icon .nav-icon:before {
+        transform: rotate(-45deg);
+        top: 0;
+    }
+
+    .header .menu-btn:checked ~ .menu-icon .nav-icon:after {
+        transform: rotate(45deg);
+        top: 0;
+    }
+
+    /* Styling af submenuerne */
+    .header .submenu {
+        display: none;
+        position: relative;
+        top: 100%;
+        left: 0;
+        background-color: #fffefc;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        padding: 1rem;
+    }
+
+    .header .submenu li a:hover {
+        background-color: #f7e6cd;
+    }
+
+    /* Styling for undermenu punkter */
+    .header .submenu li {
+        float: none; /* For at undgå, at de flugter vandret med de primære menu punkter */
+        margin: 0.5rem 0;
+    }
+
+    /* Viser undermenuer, når det tilsvarende primære menu punkt er i hover-tilstand */
+    .header .menu > li:hover .submenu {
+        display: block;
+        background-color: #fffefc;
+    }
+
+    /* Styling af indhold (body) */
+
+    body {
+        font-family: avenir;
+        background-color: #fffefc;
+        color: #3e2e25;
+    }
+
+    h1 {
+        padding-top: 7rem;
+        margin: 0 2rem;
+        text-align: center;
+        color: #3e2e25;
+        font-style: italic;
+    }
+
+    /* Jeg laver denne class/container til flex for at få elementerne i classen 
+    til at centrere sig på siden  */
+    .billede-container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 3rem;
+    }
+
+    .varianter, .fordele, .inspiration {
+        width: 15rem;
+        border:2px solid #f5835d;
+        margin-top: 3rem;
+        align-items: center;
+        transition: all 0.5s ease;
+    }
+
+   .varianter:hover, .fordele:hover, .inspiration:hover {
+        transform: scale(1.06);
+   }
+
+    h2 {
+        text-align: center;
+        color: #3e2e25;
+        font-style: italic;
+        margin-top: 0.5rem;
+    }
+
+    a {
+        text-decoration: none;
+    }
+
+    /* Jeg gør det samme med at sætte classen i flex for at få elementerne
+    til at så centreret under hinanden */
+
+    .container-illustration {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    
+   .container-illustration h3 {
+        font-size: x-large;
+        width: 20rem;
+        color: #3e2e25;
+   }
+
+   .container-illustration .forside {
+        width: 20rem;
+        margin: 3rem 0;
+   }
+
+   .citat {
+    font-weight: lighter;
+   }
+
+/* Styling af nederste afsnit */
+   
+   .container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        border: 1.5px solid #f5835d;
+        padding: 1.5rem;
+        margin: 0 0.5rem;
+        border-radius: 1rem;
+   }
+
+   h4, p {
+        margin: 0.5rem 0;
+   }
+
+   h4 {
+        font-style: italic;
+   }
+
+   .knap {
+        display: inline-block;
+        border: 1px solid #d4d9ef;
+        padding: 0.4rem 2rem;
+        text-decoration: none;
+        color: #3e2e25;
+        font-style: italic;
+        margin-top: 1rem;
+        border-radius: 0.5rem;
+   }
+
+   /* Styling af hover funkion */
+   .knap:hover {
+        background-color: #d4d9ef;
+   }
+
+   /* Styling af bølge over footeren */
+   .bølge {
+        width: 100%; 
+        margin-top: 3rem;
+   }
+
+/* Styling af footer */
+   .footer {
+        display: flex;
+        flex-direction: column;
+        background-color: #d4d9ef;
+        margin-top: -3rem;
+        justify-content: center;
+        align-items: center;
+   }
+
+   .tekst-container ul {
+        list-style: none;
+        line-height: 1.5rem;
+   }
+
+   .tekst-container h5 {
+        font-style: italic;
+        margin: 1rem 0;
+   }
+
+   /* Styling af socials */
+   footer .socials {
+       padding: 1rem;
+       color: #3e2e25;
+   }
+
+   .socials a {
+        font-size: 25px;
+        color: inherit;
+        line-height: 38px;
+        display: inline-block;
+        border-radius: 50%;
+        margin: 0 20px;
+   }
+
+   .copy {
+        font-size: small;
+        margin-bottom: 1rem;
+   }
+
+     /* Styling af icornerne, når hoveren er over */
+    .socials a:hover {
+        opacity: 1;
+        transform: scale(1.1);
+    }
+    
+
+
+/* Til tablet */
+@media screen and (min-width: 768px){
+    
+    /* Styling af "kasserne", så de bliver lidt større på tablet-device */
+    .varianter, .fordele, .inspiration {
+        width: 20rem;       
+    }
+
+    h2 {
+        font-size: xx-large;
+    }
+
+    /* Stying af elementerne, så de bliver større på tablet-device */
+    .container-illustration h3 {
+        font-size: xx-large;
+        width: 33rem;
+        margin-top: 5rem;
+   }
+
+   .container-illustration .forside {
+        width: 33rem;
+   }
+
+   /* Styling så det passer bedre til tablet-device */
+   h4 {
+        font-size: xx-large;
+   }
+
+   p {
+        padding: 2rem;
+        font-size: x-large;
+   }
+
+/* Styling af footer, så den er lidt større */
+
+   .tekst-container ul {
+        font-size: larger;
+   }
+
+   .tekst-container h5 {
+        font-size: larger;
+   }
+
+   /* Styling af socials */
+   footer .socials {
+       padding: 1rem;
+       color: #3e2e25;
+   }
+
+   .socials a {
+        font-size: 30px;
+   }    
+}
+
+/* Til computer */
+@media screen and (min-width: 1024px) {
+    
+    /* Styling af navbar så det ikke længere er en burgermenu*/
+    .header li {
+        float: left;
+    }
+
+    .header li a {
+        padding: 30px 30px;
+    }
+
+    .header .menu {
+        clear: none;
+        float: right;
+        max-height: none;
+    }
+
+    .header .menu-icon {
+        display: none;
+    }
+
+    .header .logo {
+        width: 14rem;
+    }
+
+    /* Styling af indhold (body), så elementerne er placeret i forhold til computer-device*/
+
+    h1 {
+        padding-top: 10rem;
+        font-size: 3rem;
+    }
+
+    .billede-container {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        padding: 0 10rem;
+    }
+
+    .varianter, .fordele, .inspiration {
+        width: 12rem;
+    }
+
+    h2 {
+        font-size: medium;
+    }
+   
+    /* Stying af elementerne, så de bliver større på tablet-device */
+    .container-illustration h3 {
+        font-size: 3rem;
+        width: 40rem;
+        font-weight: lighter;
+        padding-left: 2rem;
+   }
+
+   .container-illustration .forside {
+        width: 45rem;
+   }
+
+   /* Styling så det passer bedre til tablet-device */
+   h4 {
+        font-size: 2rem;
+   }
+
+
+   p {
+        padding: 1rem 4rem;
+        font-size: 1.6rem;
+   }
+
+    /* Styling af footer, så den er passer til computer-device */
+    
+    .tekst-container {
+        display: flex;
+        flex-direction: row;
+        margin-top: -8rem;
+        margin-bottom: 2rem;
+    }
+
+    .tekst-container ul {
+        font-size: medium;
+        padding: 1rem 4rem;
+        line-height: 2rem;
+    }
+
+    .tekst-container h5 {
+        font-size: medium;
+        padding: 0 4rem;
+    }
+
+    /* Styling af socials */
+    footer .socials {
+        padding: 1rem 3rem;
+    }
+
+    .socials a {
+        font-size: 25px;
+    }     
+}
+
+    
+/* Til stor computer */
+@media screen and (min-width: 1440px) {
+    
+      /* Styling af navbar */
+      .header li {
+        float: left;
+    }
+
+    .header li a {
+        padding: 45px 30px;
+    }
+
+    .header .menu {
+        clear: none;
+        float: right;
+        max-height: none;
+    }
+
+    .header .menu-icon {
+        display: none;
+    }
+
+    .header .logo {
+        width: 18rem;
+    }
+
+    /* Styling af indhold (body), så det passer til en stor coputer-device */
+
+    h1 {
+        font-size: 4rem;
+    }
+
+    .billede-container {
+        padding: 0 15rem;
+    }
+
+    .varianter, .fordele, .inspiration {
+        width: 15rem;
+    }
+
+   
+    /* Stying af elementerne, så de bliver større på computer-device */
+    .container-illustration h3 {
+        width: 50rem;
+        padding-left: 1rem;
+        font-size: 2rem;
+   }
+
+   .container-illustration .forside {
+        width: 50rem;
+   }
+
+   /* Styling så det passer bedre til computer-device */
+   p {
+        padding: 2rem 15rem;
+        font-size: 1.5rem;
+        line-height: 3.5rem;
+   }
+
+   .citat {
+        font-size: 1.6rem !important; 
+        margin-left: 3rem; 
+    }
+
+    /* Styling af footer, så den er passer til stor computer-device */
+
+    .tekst-container ul {
+        font-size: large;
+        padding: 1rem 4rem;
+        line-height: 2rem;
+    }
+
+    .tekst-container h5 {
+        font-size: medium;
+    }
+
+    /* Styling af socials */
+    footer .socials {
+        padding: 1rem 3rem;
+    }
+
+    .socials a {
+        font-size: 25px;
+    }    
+}

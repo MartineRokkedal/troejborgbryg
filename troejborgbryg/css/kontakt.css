@@ -1,0 +1,472 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+/* Til mobil  */
+/* Styling af navbar */
+    a{
+        color: #3e2e25;
+    }
+
+    .header {
+        background-color: #fffefc;
+        box-shadow: 1px 1px 4px 0 rgba(0,0,0,.1);
+        position: fixed;
+        width: 100%;
+        z-index: 3;
+    }
+
+    .header ul {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+        overflow: hidden;
+        background-color: #fffefc;
+    }
+
+    .header ul a {
+        display: block;
+        padding: 20px;
+        text-decoration: none;
+    }
+
+    .header ul a:hover {
+        background-color: #f7e6cd;
+    }
+
+    .header .logo {
+        float: left;
+        display: block;
+        width: 15rem;
+    }
+
+    .header .menu {
+        clear: both;
+        max-height: 0;
+        transition: max-height .2s ease-out;
+    }
+
+    .header .menu-icon {
+        padding: 28px 20px;
+        position: relative;
+        float: right;
+        cursor: pointer;
+    }
+
+    .header .menu-icon .nav-icon {
+        background: #333;
+        display: block;
+        height: 2px;
+        width: 18px;
+        position: relative;
+        transition: background .2s ease-out;
+    }
+
+    .header .menu-icon .nav-icon:before {
+        background-color: #333;
+        content: "";
+        display: block;
+        height: 100%;
+        width: 100%;
+        position: absolute;
+        transition: all .2s ease-out;
+        top: 5px;
+    } 
+
+    .header .menu-icon .nav-icon:after {
+        background-color: #333;
+        content: "";
+        display: block;
+        height: 100%;
+        width: 100%;
+        position: absolute;
+        transition: all .2s ease-out;
+        top: -5px;
+    } 
+
+    .header .menu-btn {
+        display: none;
+    }
+
+    .header .menu-btn:checked ~ .menu {
+        max-height: 500px;
+    }
+
+    .header .menu-btn:checked ~ .menu-icon .nav-icon {
+       background:transparent;
+    }
+
+    .header .menu-btn:checked ~ .menu-icon .nav-icon:before {
+        transform: rotate(-45deg);
+        top: 0;
+    }
+
+    .header .menu-btn:checked ~ .menu-icon .nav-icon:after {
+        transform: rotate(45deg);
+        top: 0;
+    }
+
+    /* Styling af submenuerne */
+    .header .submenu {
+        display: none;
+        position: relative;
+        top: 100%;
+        left: 0;
+        background-color: #fffefc;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        padding: 1rem;
+    }
+
+    .header .submenu li a:hover {
+        background-color: #f7e6cd;
+    }
+
+    /* Styling for undermenu punkter */
+    .header .submenu li {
+        float: none; /* For at undgå, at de flugter vandret med de primære menu punkter */
+        margin: 0.5rem 0;
+    }
+
+    /* Viser undermenuer, når det tilsvarende primære menu punkt er i hover-tilstand */
+    .header .menu > li:hover .submenu {
+        display: block;
+        background-color: #fffefc;
+    }
+
+/* Styling af indhold (body) */
+
+    body {
+        font-family: avenir;
+        background-color: #fffefc;
+        color: #3e2e25;
+    }
+
+    .gradient {
+        background-image: url(../images/gradient.svg);
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        height: 45vh;
+        margin: 0;
+    }
+
+    h1 {
+        padding-top: 9rem;
+        margin: 0 2rem;
+        text-align: center;
+        color: #3e2e25;
+        font-style: italic;
+    }
+
+    h2 {
+        font-size: medium;
+        font-weight: lighter;
+        font-style: italic;
+        margin-top: 1rem;
+        text-align: center;
+    }
+
+    p {
+        margin: 1rem 3rem;
+        line-height: 1.5rem;
+    }
+
+    .container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .knap {
+        display: inline-block;
+        border: 1px solid #d4d9ef;
+        padding: 0.4rem 2rem;
+        text-decoration: none;
+        color: #3e2e25;
+        font-style: italic;
+        margin: 1rem;
+        border-radius: 0.5rem;
+   }
+
+   /* Styling af hover funkion */
+   .knap:hover {
+        background-color: #d4d9ef;
+   }
+
+/* Styling af bølge over footeren */
+    .bølge {
+        width: 100%; 
+        margin-top: -2rem;
+    }
+
+/* Styling af footer */
+    .footer {
+        display: flex;
+        flex-direction: column;
+        background-color: #d4d9ef;
+        margin-top: -3rem;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .tekst-container ul {
+        list-style: none;
+        line-height: 1.5rem;
+    }
+
+    .tekst-container h3 {
+        font-style: italic;
+        margin: 1rem 0;
+    }
+
+    /* Styling af socials */
+    footer .socials {
+        padding: 1rem;
+        color: #3e2e25;
+    }
+
+    .footer a {
+        text-decoration: none;
+
+    }
+
+    .socials a {
+        font-size: 25px;
+        color: inherit;
+        line-height: 38px;
+        display: inline-block;
+        border-radius: 50%;
+        margin: 0 20px;
+    }
+
+    .copy {
+        font-size: small;
+        margin-bottom: 1rem;
+    }
+
+    /* Styling af icornerne, når hoveren er over */
+    .socials a:hover {
+        opacity: 1;
+        transform: scale(1.1);
+    }
+
+/* Til tablet */
+@media screen and (min-width: 768px){
+    
+/* Styling af indhold (body) så det passer til ipad-device */
+    h1 {
+        font-size: x-large;
+        padding-top: 13rem;
+    }
+
+    h2 {
+        text-align: center;
+    }
+
+    p {
+        margin: 1rem 10rem;
+        line-height: 2rem;
+    }
+
+    .gradient {
+        height: 55vh;
+    }
+
+/* Styling af bølge */
+    .bølge {
+        margin-top: -4rem;
+    }
+
+/* Styling af footer, så den er lidt større */
+
+    .tekst-container ul {
+        font-size: larger;
+    }
+
+    .tekst-container h3 {
+        font-size: larger;
+    }
+
+    /* Styling af socials */
+    footer .socials {
+        padding: 1rem;
+        color: #3e2e25;
+    }
+
+    .socials a {
+        font-size: 30px;
+    }  
+}
+
+/* Til computer */
+@media screen and (min-width: 1024px) {
+    
+    /* Styling af navbar så det ikke længere er en burgermenu*/
+    .header li {
+        float: left;
+    }
+
+    .header li a {
+        padding: 30px 30px;
+    }
+
+    .header .menu {
+        clear: none;
+        float: right;
+        max-height: none;
+    }
+
+    .header .menu-icon {
+        display: none;
+    }
+
+    .header .logo {
+        width: 14rem;
+    }
+
+/* Styling af indhold (body), så elementerne er placeret i forhold til computer-device*/
+
+    h1 {
+        padding-top: 14rem;
+        font-size: 3rem;
+    }
+
+    h2 {
+        font-size: x-large;
+    }
+
+    p {
+        font-size: large;
+        margin: 2rem 13rem;
+        line-height: 2.5rem;
+    }
+
+    .gradient {
+        height: 70vh;
+    }
+
+    .knap {
+        display: inline-block;
+        border: 1px solid #d4d9ef;
+        padding: 1rem 4rem;
+        text-decoration: none;
+        color: #3e2e25;
+        font-style: italic;
+        margin: 1rem;
+        border-radius: 0.5rem;
+        font-size: larger;
+   }
+
+/* Styling af bølge */
+   .bølge {
+        margin-top: -5rem;
+   }
+
+/* Styling af footer, så den er passer til computer-device */
+    
+   .tekst-container {
+        display: flex;
+        flex-direction: row;
+        margin-top: -8rem;
+        margin-bottom: 2rem;
+    }
+
+    .tekst-container ul {
+        font-size: medium;
+        padding: 1rem 4rem;
+        line-height: 2rem;
+    }
+
+    .tekst-container h3 {
+        font-size: medium;
+        padding: 0 4rem;
+    }
+
+    /* Styling af socials */
+    footer .socials {
+        padding: 1rem 3rem;
+    }
+
+    .socials a {
+        font-size: 25px;
+    }     
+}
+
+/* Til stor computer */
+@media screen and (min-width: 1440px) {
+    
+    /* Styling af navbar */
+    .header li {
+        float: left;
+    }
+
+    .header li a {
+        padding: 45px 30px;
+    }
+
+    .header .menu {
+        clear: none;
+        float: right;
+        max-height: none;
+    }
+
+    .header .menu-icon {
+        display: none;
+    }
+
+    .header .logo {
+        width: 18rem;
+    }
+
+/* Styling af indhold (body), så det passer til en stor coputer-device */
+
+    h1 {
+        font-size: 4rem;
+    }
+
+    h2 {
+        font-size: 2rem;
+    }
+
+    p {
+        font-size: x-large;
+        margin: 2rem 20rem;
+    }
+
+    .knap {
+        margin-top: 5rem;
+    }
+
+    .gradient {
+        height: 140vh;
+    }
+
+/* Styling af bølge */
+    .bølge {
+        margin-top: -7rem;
+    }
+
+/* Styling af footer, så den er passer til stor computer-device */
+
+    .tekst-container ul {
+        font-size: large;
+        padding: 1rem 4rem;
+        line-height: 2rem;
+    }
+
+    .tekst-container h3 {
+        font-size: medium;
+    }
+
+    /* Styling af socials */
+    footer .socials {
+        padding: 1rem 3rem;
+    }
+
+    .socials a {
+        font-size: 25px;
+    }    
+
+}

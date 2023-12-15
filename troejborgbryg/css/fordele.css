@@ -1,0 +1,456 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+/* Til mobil  */
+/* Styling af navbar */
+    a{
+        color: #3e2e25;
+    }
+
+    .header {
+        background-color: #fffefc;
+        box-shadow: 1px 1px 4px 0 rgba(0,0,0,.1);
+        position: fixed;
+        width: 100%;
+        z-index: 3;
+    }
+
+    .header ul {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+        overflow: hidden;
+        background-color: #fffefc;
+    }
+
+    .header ul a {
+        display: block;
+        padding: 20px;
+        text-decoration: none;
+    }
+
+    .header ul a:hover {
+        background-color: #f7e6cd;
+    }
+
+    .header .logo {
+        float: left;
+        display: block;
+        width: 15rem;
+        height: auto;
+    }
+
+    .header .menu {
+        clear: both;
+        max-height: 0;
+        transition: max-height .2s ease-out;
+    }
+
+    .header .menu-icon {
+        padding: 28px 20px;
+        position: relative;
+        float: right;
+        cursor: pointer;
+    }
+
+    .header .menu-icon .nav-icon {
+        background: #333;
+        display: block;
+        height: 2px;
+        width: 18px;
+        position: relative;
+        transition: background .2s ease-out;
+    }
+
+    .header .menu-icon .nav-icon:before {
+        background-color: #333;
+        content: "";
+        display: block;
+        height: 100%;
+        width: 100%;
+        position: absolute;
+        transition: all .2s ease-out;
+        top: 5px;
+    } 
+
+    .header .menu-icon .nav-icon:after {
+        background-color: #333;
+        content: "";
+        display: block;
+        height: 100%;
+        width: 100%;
+        position: absolute;
+        transition: all .2s ease-out;
+        top: -5px;
+    } 
+
+    .header .menu-btn {
+        display: none;
+    }
+
+    .header .menu-btn:checked ~ .menu {
+        max-height: 500px;
+    }
+
+    .header .menu-btn:checked ~ .menu-icon .nav-icon {
+    background:transparent;
+    }
+
+    .header .menu-btn:checked ~ .menu-icon .nav-icon:before {
+        transform: rotate(-45deg);
+        top: 0;
+    }
+
+    .header .menu-btn:checked ~ .menu-icon .nav-icon:after {
+        transform: rotate(45deg);
+        top: 0;
+    }
+
+    /* Styling af submenuerne */
+    .header .submenu {
+        display: none;
+        position: relative;
+        top: 100%;
+        left: 0;
+        background-color: #fffefc;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        padding: 1rem;
+    }
+
+    .header .submenu li a:hover {
+        background-color: #f7e6cd;
+    }
+
+    /* Styling for undermenu punkter */
+    .header .submenu li {
+        float: none; /* For at undgå, at de flugter vandret med de primære menu punkter */
+        margin: 0.5rem 0;
+    }
+
+    /* Viser undermenuer, når det tilsvarende primære menu punkt er i hover-tilstand */
+    .header .menu > li:hover .submenu {
+        display: block;
+        background-color: #fffefc;
+    }
+
+/* Styling af indhold (body) */
+    body {
+        font-family: avenir;
+        background-color: #fffefc;
+        color: #3e2e25;
+    }
+
+    h1 {
+        padding-top: 7rem;
+        margin: 0 4rem;
+        text-align: center;
+        color: #3e2e25;
+        font-style: italic;
+    }
+
+    /* Styling af container */
+    .content {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 1rem 4rem;
+        line-height: 1.5rem;
+    }
+
+    /* Styling af læs mere knap */
+    #readMoreCheckbox {
+        display: none;
+    }
+
+    .readMoreLabel {
+        color: #3e2e25;
+        padding: 1rem 0;
+        cursor: pointer;
+        display: inline-block;
+        align-self: flex-start;
+    }
+
+    #mere {
+        display: none;
+        margin-top: 2rem;
+        margin-bottom: 1rem;
+    }
+
+    #readMoreCheckbox:checked + .readMoreLabel + #mere {
+        display: block;
+    }
+
+    #readMoreCheckbox:checked + .readMoreLabel:before {
+        content:"Vis mindre"
+    }
+
+    #readMoreCheckbox:not(:checked) + .readMoreLabel:before {
+        content: "Læs mere";
+    }
+
+    #readMoreCheckbox:checked ~ #mere {
+        display: block;
+    }
+  
+/* Styling af billeder */
+        .infographic-mobil {
+            width: 20rem;
+            height: auto;
+            background-color: #f7e6cd;
+            border-radius: 1rem;
+        }
+
+    /* Styling af billede - jeg skjuler dette billede, da jeg kun ønsker, 
+    at det skal ses på computeren */
+
+        .infographic-computer {
+            display: none;
+        }
+
+/* Styling af bølge over footeren */
+    .bølge {
+        width: 100%; 
+        height: auto;
+        margin-top: 3rem;
+    }
+
+/* Styling af footer */
+    .footer {
+        display: flex;
+        flex-direction: column;
+        background-color: #d4d9ef;
+        margin-top: -3rem;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .tekst-container ul {
+        list-style: none;
+        line-height: 1.5rem;
+    }
+
+    .tekst-container h2 {
+        font-style: italic;
+        margin: 1rem 0;
+    }
+
+    /* Styling af socials */
+    footer .socials {
+    padding: 1rem;
+    color: #3e2e25;
+    }
+
+    .socials a {
+        font-size: 25px;
+        color: inherit;
+        line-height: 38px;
+        display: inline-block;
+        border-radius: 50%;
+        margin: 0 20px;
+    }
+
+    .copy {
+        font-size: small;
+        margin-bottom: 1rem;
+       }
+
+    /* Styling af icornerne, når hoveren er over */
+    .socials a:hover {
+        opacity: 1;
+        transform: scale(1.1);
+    }
+
+/* Til tablet */
+@media screen and (min-width: 768px){
+    h1 {
+        font-size: x-large;
+    }
+
+    .content {
+        font-size: large;
+        margin: 1rem 3rem;
+    }
+
+    .infographic-mobil {
+        width: 27rem;
+        height: auto;
+    }
+
+
+/* Styling af footer, så den er lidt større */
+
+   .tekst-container ul {
+        font-size: larger;
+    }
+
+    .tekst-container h2 {
+        font-size: larger;
+    }
+
+    /* Styling af socials */
+    footer .socials {
+        padding: 1rem;
+        color: #3e2e25;
+    }
+
+    .socials a {
+        font-size: 30px;
+    }    
+
+}
+
+/* Til computer */
+@media screen and (min-width: 1024px) {
+    /* Styling af navbar så det ikke længere er en burgermenu*/
+    .header li {
+        float: left;
+    }
+
+    .header li a {
+        padding: 30px 30px;
+    }
+
+    .header .menu {
+        clear: none;
+        float: right;
+        max-height: none;
+    }
+
+    .header .menu-icon {
+        display: none;
+    }
+
+    .header .logo {
+        width: 14rem;
+    }
+
+/* Styling af indhold (body), så elementerne er placeret i forhold til computer-device*/
+    h1 {
+        padding-top: 10rem;
+        font-size: 4rem;
+    }
+
+    .content {
+        margin: 0 10rem;
+    }
+
+
+    /* Styling af læs mere området. Alt teksten skal vises på computer */
+    #mere {
+        display: block;
+    }
+
+    .readMoreLabel {
+        display: none;
+    }
+
+ /* Stying af billeder  */
+    /* Jeg skjuler dette billede, når det er på computer-device */
+    .infographic-mobil {
+        display: none;
+    }
+
+    .infographic-computer {
+        display: block;
+        background-color: #f7e6cd;
+        border-radius: 1rem;
+        width: 50rem;
+        height: auto;
+        padding: 5rem 0;
+        margin-top: 2rem;
+    }
+
+/* Styling af footer, så den er passer til computer-device */
+    
+    .tekst-container {
+        display: flex;
+        flex-direction: row;
+        margin-top: -8rem;
+        margin-bottom: 2rem;
+    }
+
+    .tekst-container ul {
+        font-size: medium;
+        padding: 1rem 4rem;
+        line-height: 2rem;
+    }
+
+    .tekst-container h2 {
+        font-size: medium;
+        padding: 0 4rem;
+    }
+
+    .footer a {
+        text-decoration: none;
+    }
+
+    /* Styling af socials */
+    footer .socials {
+        padding: 1rem 3rem;
+    }
+
+    .socials a {
+        font-size: 25px;
+    }     
+}
+
+/* Til stor computer */
+@media screen and (min-width: 1440px) {
+    
+    /* Styling af navbar */
+    .header li {
+      float: left;
+    }
+
+    .header li a {
+        padding: 45px 30px;
+    }
+
+    .header .menu {
+        clear: none;
+        float: right;
+        max-height: none;
+    }
+
+    .header .menu-icon {
+        display: none;
+    }
+
+    .header .logo { 
+        width: 18rem;
+    }
+
+/* Styling af indhold (body), så det passer til en stor coputer-device */
+    h1 {
+            font-size: 5rem;
+        }
+    
+    .content {
+        margin: 0 12rem;
+    }
+
+/* Styling af footer, så den er passer til stor computer-device */
+
+    .tekst-container ul {
+        font-size: large;
+        padding: 1rem 4rem;
+        line-height: 2rem;
+    }
+
+    .tekst-container h2 {
+        font-size: larger;
+    }
+
+    /* Styling af socials */
+    footer .socials {
+        padding: 1rem 3rem;
+    }
+
+    .socials a {
+        font-size: 25px;
+    }    
+}
